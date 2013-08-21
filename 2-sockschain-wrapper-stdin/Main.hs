@@ -3,7 +3,6 @@ import Data.Attoparsec.Char8
 import qualified Data.ByteString.Char8 as Char8
 import System.IO
 import System.Exit
-import System.Environment
 import Data.ByteString.UTF8
 import qualified Data.ByteString.Internal as S
 import qualified Data.ByteString          as S (length, take, drop)
@@ -30,6 +29,11 @@ showSocksLine (SocksLine host port) =
   (toString host) ++ " " ++ (toString port)
 
 main = do
+  putStr "[#] Command: "
+  hFlush stdout
+  
+  command <- getLine
+  
   putStr "[#] Socks: "
   hFlush stdout
   
@@ -52,7 +56,5 @@ main = do
       
       writeFile "/etc/proxychains.conf" config
       
-      args <- getArgs
-      
-      system ("proxychains " ++ (intercalate " " args))
+      system ("proxychains " ++ command)
       
