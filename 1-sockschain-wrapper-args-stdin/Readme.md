@@ -9,6 +9,6 @@ Usage:
 To socksify firefox using socks5 127.0.0.1:5000:
 
 ```
-./Main firefox
+sudo ./Main curl example.com
 [#] Socks: 127.0.0.1:5000
 ```
