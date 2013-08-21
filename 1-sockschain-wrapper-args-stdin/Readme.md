@@ -9,7 +9,6 @@ Usage:
 To socksify firefox using socks5 127.0.0.1:5000:
 
 ```
-./Main
-[#] Command: firefox
+./Main firefox
 [#] Socks: 127.0.0.1:5000
 ```
